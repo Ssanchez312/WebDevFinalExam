@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Closet</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="./javascript/service.js"></script>
+  <script src="./javascript/ui.js"></script>
+</head>
+<body>
+  <h1>Virtual Closet</h1>
+  <h2>Upload Clothing Item</h2>
+
+  <div>
+    <input type="text" id="clothing-name" placeholder="Clothing name" />
+    <input type="text" id="clothing-type" placeholder="Type (e.g. Shirt, Pants)" />
+    <input type="text" id="clothing-description" placeholder="Description (optional)" />
+    <input type="text" id="clothing-image" placeholder="Image URL" />
+    <button onclick="uploadClothing()">Upload</button>
+  </div>
+
+  <h2>Your Closet</h2>
+  <div id="closet"></div>
+</body>
+</html>

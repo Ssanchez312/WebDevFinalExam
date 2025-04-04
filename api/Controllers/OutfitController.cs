@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace VirtualClosetAPI.Controllers;
 
 [ApiController]
