@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Outfit Builder</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <nav>
+        <a href="clothing.html">Upload Clothing</a> |
+        <a href="outfits.html">My Closet</a> |
+        <a href="index.html" onclick="logout()">Logout</a>
+      </nav>
+      <hr />
+  <h1>🧢 Outfit Builder</h1>
+
+  <h2>Your Closet</h2>
+  <div id="closet"></div>
+
+  <h2>Build Your Outfit</h2>
+  <div id="outfit-canvas" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+  <input type="text" id="outfit-name" placeholder="Outfit name" />
+  <button onclick="saveOutfit()">Save Outfit</button>
+
+  <h2>Saved Outfits</h2>
+  <div id="saved-outfits"></div>
+
+  <script src="./javascript/service.js"></script>
+  <script src="./javascript/ui.js"></script>
+</body>
+</html>

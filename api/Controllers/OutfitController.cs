@@ -24,4 +24,25 @@ public class OutfitsController : ControllerBase
         var userOutfits = _outfits.Where(o => o.UserId == userId).ToList();
         return Ok(userOutfits);
     }
+
+    [HttpPut("update/{id}")]
+    public IActionResult UpdateOutfit(int id, [FromBody] Outfit updated)
+    {
+        var outfit = _outfits.FirstOrDefault(o => o.Id == id);
+        if (outfit == null) return NotFound("Outfit not found");
+
+        outfit.Name = updated.Name;
+        outfit.ClothingItemIds = updated.ClothingItemIds;
+        return Ok(new { message = "Outfit updated!", outfit });
+    }
+    [HttpDelete("delete/{id}")]
+    public IActionResult DeleteOutfit(int id)
+    {
+        var outfit = _outfits.FirstOrDefault(o => o.Id == id);
+        if (outfit == null)
+            return NotFound("Outfit not found");
+
+        _outfits.Remove(outfit);
+        return Ok(new { message = "Outfit deleted successfully" });
+    }
 }

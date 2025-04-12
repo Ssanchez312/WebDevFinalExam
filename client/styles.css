@@ -1,0 +1,201 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f8f9fa;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 900px;
+  }
+  
+  nav {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  nav a {
+    text-decoration: none;
+    margin-right: 15px;
+    color: #007bff;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  #upload-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #closet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    min-height: 120px;
+    background-color: #fefefe;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  #closet img.clothing-item {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    cursor: grab;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: transform 0.2s ease;
+  }
+  
+  #closet img.clothing-item:hover {
+    transform: scale(1.05);
+  }
+  
+
+/* login styling */
+#auth {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  #auth input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  #auth button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #auth button:hover {
+    background-color: #218838;
+  }
+  
+  #auth-msg {
+    text-align: center;
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  /* add clothing page styling */
+  #closet,
+#outfit-canvas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  min-height: 150px;
+  background-color: #fefefe;
+  margin-bottom: 20px;
+}
+
+.clothing-item {
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.clothing-item:hover {
+  transform: scale(1.05);
+}
+
+#outfit-canvas img {
+  width: 80px;
+}
+
+#outfit-name {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 300px;
+}
+
+#saved-outfits p {
+  background-color: #f1f1f1;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+/* Outfit vreation page styling */
+#closet,
+#outfit-canvas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  min-height: 150px;
+  background-color: #fefefe;
+  margin-bottom: 20px;
+}
+
+.clothing-item {
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.clothing-item:hover {
+  transform: scale(1.05);
+}
+
+#outfit-canvas img {
+  width: 80px;
+}
+
+#outfit-name {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 300px;
+}
+
+#saved-outfits p {
+  background-color: #f1f1f1;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
