@@ -3,12 +3,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace VirtualClosetAPI.Controllers;
 
+
 [ApiController]
 [Route("api/[controller]")]
 public class UsersController : ControllerBase
 {
-    private static List<User> _users = new();
-    private static int _nextId = 1;
+    private static string FilePath = "Data/users.json";
+    private static List<User> _users = StorageService.LoadFromFile<User>(FilePath);
+    private static int _nextId = _users.Count > 0 ? _users.Max(u => u.Id) + 1 : 1;
+
 
     [HttpPost("register")]
     public IActionResult Register([FromBody] User newUser)
@@ -18,6 +21,7 @@ public class UsersController : ControllerBase
 
         newUser.Id = _nextId++;
         _users.Add(newUser);
+        StorageService.SaveToFile(FilePath, _users);
 
         return Ok(new { message = "User registered successfully!", user = newUser });
     }
@@ -25,11 +29,13 @@ public class UsersController : ControllerBase
     [HttpPost("login")]
     public IActionResult Login([FromBody] User loginUser)
     {
-        var user = _users.FirstOrDefault(u => 
+        var user = _users.FirstOrDefault(u =>
             u.Username == loginUser.Username && u.Password == loginUser.Password);
 
         if (user == null)
             return Unauthorized("Invalid username or password.");
+
+        StorageService.SaveToFile(FilePath, _users);
 
         return Ok(new { message = "Login successful!", user });
     }

@@ -121,10 +121,22 @@ function drop(ev) {
   if (!selectedClothingIds.includes(parseInt(id))) {
     selectedClothingIds.push(parseInt(id));
 
-    const img = ev.target.appendChild(document.createElement("img"));
+    const img = document.createElement("img");
     img.src = document.querySelector(`[data-id='${id}']`).src;
     img.style.width = "80px";
+    img.dataset.id = id;
+    img.addEventListener("click", removeFromCanvas); 
+    ev.target.appendChild(img);
   }
+}
+
+function removeFromCanvas(ev) {
+  const img = ev.target;
+  const id = parseInt(img.dataset.id);
+
+  selectedClothingIds = selectedClothingIds.filter(clothingId => clothingId !== id);
+
+  img.remove();
 }
 
 async function saveOutfit() {
@@ -161,37 +173,55 @@ async function saveOutfit() {
   loadOutfits();
 }
 
-function loadOutfits() {
+async function loadOutfits() {
   const user = JSON.parse(localStorage.getItem("user"));
   if (!user) return;
 
-  fetch(`${apiURL}/outfits/user/${user.id}`)
-    .then((res) => res.json())
-    .then((outfits) => {
-      const container = document.getElementById("saved-outfits");
-      while (container.firstChild) {
-        container.removeChild(container.firstChild);
-      }
+  const res = await fetch(`${apiURL}/outfits/user/${user.id}`);
+  const outfits = await res.json();
 
-      outfits.forEach((o) => {
-        const div = document.createElement("div");
-        const nameElement = document.createElement("p");
-        nameElement.textContent = `${o.name} (ID: ${o.id})`;
+  const container = document.getElementById("saved-outfits");
+  container.innerHTML = "";
 
-        const editButton = document.createElement("button");
-        editButton.textContent = "Edit";
-        editButton.onclick = () => editOutfit(o.id);
-        const deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
-        deleteButton.onclick = () => deleteOutfit(o.id);
+  outfits.forEach(outfit => {
+    const outfitBox = document.createElement("div");
+    outfitBox.classList.add("outfit-box");
 
-        div.appendChild(nameElement);
-        div.appendChild(editButton);
-        div.appendChild(deleteButton);
-        container.appendChild(div);
-      });
+    const title = document.createElement("p");
+    title.textContent = `${outfit.name} (ID: ${outfit.id})`;
+    outfitBox.appendChild(title);
+
+    const preview = document.createElement("div");
+    preview.classList.add("outfit-preview");
+
+    outfit.clothingItemIds.forEach(id => {
+      const img = document.querySelector(`[data-id="${id}"]`);
+      if (!img) return;
+
+      const imgCopy = document.createElement("img");
+      imgCopy.src = img.src;
+      imgCopy.alt = "Clothing item";
+      imgCopy.classList.add("preview-img");
+      preview.appendChild(imgCopy);
     });
+
+    outfitBox.appendChild(preview);
+
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.onclick = () => editOutfit(outfit.id);
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.onclick = () => deleteOutfit(outfit.id);
+
+    outfitBox.appendChild(editBtn);
+    outfitBox.appendChild(deleteBtn);
+
+    container.appendChild(outfitBox);
+  });
 }
+
 window.allowDrop = allowDrop;
 window.drag = drag;
 window.drop = drop;

@@ -6,15 +6,16 @@ namespace VirtualClosetAPI.Controllers;
 [Route("api/[controller]")]
 public class OutfitsController : ControllerBase
 {
-    private static List<Outfit> _outfits = new();
-    private static int _nextId = 1;
+    private static string FilePath = "Data/outfits.json";
+    private static List<Outfit> _outfits = StorageService.LoadFromFile<Outfit>(FilePath);
+    private static int _nextId = _outfits.Count > 0 ? _outfits.Max(o => o.Id) + 1 : 1;
 
     [HttpPost("create")]
     public IActionResult CreateOutfit([FromBody] Outfit newOutfit)
     {
         newOutfit.Id = _nextId++;
         _outfits.Add(newOutfit);
-
+        StorageService.SaveToFile(FilePath, _outfits);
         return Ok(new { message = "Outfit created successfully!", outfit = newOutfit });
     }
 
@@ -33,8 +34,10 @@ public class OutfitsController : ControllerBase
 
         outfit.Name = updated.Name;
         outfit.ClothingItemIds = updated.ClothingItemIds;
+        StorageService.SaveToFile(FilePath, _outfits);
         return Ok(new { message = "Outfit updated!", outfit });
     }
+    
     [HttpDelete("delete/{id}")]
     public IActionResult DeleteOutfit(int id)
     {
@@ -43,6 +46,7 @@ public class OutfitsController : ControllerBase
             return NotFound("Outfit not found");
 
         _outfits.Remove(outfit);
+        StorageService.SaveToFile(FilePath, _outfits);
         return Ok(new { message = "Outfit deleted successfully" });
     }
 }

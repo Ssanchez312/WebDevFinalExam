@@ -1,0 +1,34 @@
+[
+  {
+    "Id": 1,
+    "Name": "CPFM CARTI TEE",
+    "Type": "TShirt",
+    "Description": "CPFM WLR TEE",
+    "ImageUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS9XBfjiaRTOXtQmLrseojUSOb8nFH5k2X8gcQlJYM6aYQWFLxw8WBEUT--Q1BpxNGZsoizDMlCUQ9U15DbHt5SoR0YniIaIwdH6UBZbtk1xFqcOVXgkpw0",
+    "UserId": 1
+  },
+  {
+    "Id": 2,
+    "Name": "Acne Studios Jeans",
+    "Type": "Jeans",
+    "Description": "Acne Studios Mid Blue Super Baggy Jeans",
+    "ImageUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS-lApmn8HNONWDhCUcrZIbddHwm_GEG9evcQkQOLLJiVDuueUht86Im9yhNArCQIHP33yeF_LbSGgK64K5_n4oTeovAef5jNr3UZAv8YtsvtwSsajg81bvsw",
+    "UserId": 1
+  },
+  {
+    "Id": 3,
+    "Name": "Asics 1130",
+    "Type": "Sneakers",
+    "Description": "Asics 1130 Sneakers ",
+    "ImageUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRF7oEbM_ZOc1tVBbGrgDL0SpHI3TxRG1VbCiUbRehDkSgwbvbb_8M3q8N2rhf91mFvCudej-BRJmsb9pRqTsd8UlVs3M1I6TjaLoMPldXueS_E3uHuV2MW",
+    "UserId": 1
+  },
+  {
+    "Id": 4,
+    "Name": "Poem Shirt",
+    "Type": "Button Up Shirt",
+    "Description": "Junya Watanabe Button Up poem shirt",
+    "ImageUrl": "https://i.pinimg.com/736x/4d/0a/d1/4d0ad1b9f20b8fefe3989b7171032624.jpg",
+    "UserId": 1
+  }
+]
