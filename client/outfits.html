@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Outfit Builder</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
-    <nav>
-        <a href="clothing.html">Upload Clothing</a> |
-        <a href="outfits.html">My Closet</a> |
-        <a href="index.html" onclick="logout()">Logout</a>
-      </nav>
-      <hr />
+  <nav>
+    <a href="clothing.html">Upload Clothing</a> |
+    <a href="outfits.html">My Closet</a> |
+    <a href="index.html" onclick="logout()">Logout</a>
+  </nav>
+  <hr />
   <h1>🧢 Outfit Builder</h1>
 
   <h2>Your Closet</h2>
@@ -23,10 +25,15 @@
   <input type="text" id="outfit-name" placeholder="Outfit name" />
   <button onclick="saveOutfit()">Save Outfit</button>
 
+  <input type="text" id="outfit-filter" placeholder="Filter outfits by name..." />
+  <button onclick="applyOutfitFilter()">Filter</button>
+  <button onclick="clearOutfitFilter()">Clear</button>
+  
   <h2>Saved Outfits</h2>
   <div id="saved-outfits"></div>
 
   <script src="./javascript/service.js"></script>
   <script src="./javascript/ui.js"></script>
 </body>
+
 </html>

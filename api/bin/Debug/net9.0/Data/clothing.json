@@ -30,5 +30,21 @@
     "Description": "Junya Watanabe Button Up poem shirt",
     "ImageUrl": "https://i.pinimg.com/736x/4d/0a/d1/4d0ad1b9f20b8fefe3989b7171032624.jpg",
     "UserId": 1
+  },
+  {
+    "Id": 5,
+    "Name": "Spongebob",
+    "Type": "T Shirt",
+    "Description": "Spongebob T shirt",
+    "ImageUrl": "https://m.media-amazon.com/images/I/71OZZhjVNcL._AC_UY1000_.jpg",
+    "UserId": 1
+  },
+  {
+    "Id": 6,
+    "Name": "Converse Sneakers",
+    "Type": "Sneakers",
+    "Description": "Bishwas Ugly Sneakers",
+    "ImageUrl": "https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/985788s.jpg?im=Resize,width=750",
+    "UserId": 1
   }
 ]

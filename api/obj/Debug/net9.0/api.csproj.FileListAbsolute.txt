@@ -166,9 +166,6 @@ C:\Users\sergi\Desktop\WebDevClass\FINAL\WebDevFinalExam\api\obj\Debug\net9.0\re
 C:\Users\sergi\Desktop\WebDevClass\FINAL\WebDevFinalExam\api\obj\Debug\net9.0\api.pdb
 C:\Users\sergi\Desktop\WebDevClass\FINAL\WebDevFinalExam\api\obj\Debug\net9.0\api.genruntimeconfig.cache
 C:\Users\sergi\Desktop\WebDevClass\FINAL\WebDevFinalExam\api\obj\Debug\net9.0\ref\api.dll
-C:\Users\sergi\Desktop\WebDevClass\FINAL\WebDevFinalExam\api\bin\Debug\net9.0\Data\_clothingItems.json
-C:\Users\sergi\Desktop\WebDevClass\FINAL\WebDevFinalExam\api\bin\Debug\net9.0\Data\_outfits.json
-C:\Users\sergi\Desktop\WebDevClass\FINAL\WebDevFinalExam\api\bin\Debug\net9.0\Data\_users.json
 C:\Users\sergi\Desktop\WebDevClass\FINAL\WebDevFinalExam\api\bin\Debug\net9.0\Data\users.json
 C:\Users\sergi\Desktop\WebDevClass\FINAL\WebDevFinalExam\api\bin\Debug\net9.0\Data\clothing.json
 C:\Users\sergi\Desktop\WebDevClass\FINAL\WebDevFinalExam\api\bin\Debug\net9.0\Data\outfits.json

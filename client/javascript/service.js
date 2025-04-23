@@ -1,4 +1,7 @@
 const apiURL = "http://localhost:5261/api";
+let currentOutfitFilter = "";
+
+
 // User registration and login functions
 async function registerUser() {
   console.log("registerUser function called");
@@ -181,9 +184,15 @@ async function loadOutfits() {
   const outfits = await res.json();
 
   const container = document.getElementById("saved-outfits");
-  container.innerHTML = "";
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
 
-  outfits.forEach(outfit => {
+  const filtered = outfits.filter(o =>
+    o.name.toLowerCase().includes(currentOutfitFilter)
+  );
+
+  filtered.forEach(outfit => {
     const outfitBox = document.createElement("div");
     outfitBox.classList.add("outfit-box");
 
@@ -275,3 +284,15 @@ function deleteOutfit(id) {
     })
     .catch((err) => console.error("Delete failed:", err));
 }
+
+function applyOutfitFilter() {
+  const input = document.getElementById("outfit-filter");
+  currentOutfitFilter = input.value.trim().toLowerCase();
+  loadOutfits();
+}
+
+function clearOutfitFilter() {
+  document.getElementById("outfit-filter").value = "";
+  currentOutfitFilter = "";
+  loadOutfits();
+} 

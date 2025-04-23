@@ -1,15 +1,5 @@
 [
   {
-    "Id": 2,
-    "Name": "test",
-    "UserId": 1,
-    "ClothingItemIds": [
-      1,
-      2,
-      3
-    ]
-  },
-  {
     "Id": 3,
     "Name": "junya",
     "UserId": 1,
@@ -17,6 +7,16 @@
       4,
       2,
       3
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Bishwas Fit",
+    "UserId": 1,
+    "ClothingItemIds": [
+      5,
+      2,
+      6
     ]
   }
 ]
