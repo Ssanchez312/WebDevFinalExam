@@ -29,3 +29,19 @@ window.addEventListener("DOMContentLoaded", async () => {
     loadOutfits();
   }
 });
+
+
+//Reset outfit button functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const resetBtn = document.getElementById("resetOutfitBtn");
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      const canvas = document.getElementById("outfit-canvas");
+      if (canvas) {
+        canvas.innerHTML = ""; // remove all images
+      }
+      selectedClothingIds = []; // clear selection
+    });
+  }
+});
