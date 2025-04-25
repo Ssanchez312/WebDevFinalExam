@@ -116,17 +116,28 @@ body {
   }
 
   /* add clothing page styling */
-  #closet,
+  #closet
+  { 
+     display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    min-height: 150px;
+    background-color: #fefefe;
+    margin-bottom: 20px;
+  }
 #outfit-canvas {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  gap: 10px;
   padding: 10px;
-  border: 2px dashed #ccc;
+  border: 1px dashed #ccc;
   border-radius: 8px;
-  min-height: 150px;
-  background-color: #fefefe;
-  margin-bottom: 20px;
+  min-height: 120px;
+  background-color: #fafafa;
 }
 
 .clothing-item {
@@ -140,6 +151,16 @@ body {
 
 #outfit-canvas img {
   width: 80px;
+  height: auto;          
+  object-fit: contain;    
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  &:hover{
+    outline: 2px solid red;
+    cursor: pointer;
+    transform: scale(1.05);
+  }
 }
 
 #outfit-name {
@@ -240,3 +261,5 @@ body {
   outline: 2px solid red;
   cursor: pointer;
 }
+
+/* Drop Menu Styling */

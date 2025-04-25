@@ -126,7 +126,7 @@ function drop(ev) {
 
     const img = document.createElement("img");
     img.src = document.querySelector(`[data-id='${id}']`).src;
-    img.style.width = "80px";
+
     img.dataset.id = id;
     img.addEventListener("click", removeFromCanvas); 
     ev.target.appendChild(img);

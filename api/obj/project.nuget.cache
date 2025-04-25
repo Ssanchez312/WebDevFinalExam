@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wgvwdKpDaL4=",
+  "dgSpecHash": "sghPJI02nl8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sergi\\Desktop\\WebDevClass\\FINAL\\WebDevFinalExam\\api\\api.csproj",
+  "projectFilePath": "C:\\Users\\sergi\\Desktop\\WebDevClass\\WebDevFinalExam\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sergi\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\sergi\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
