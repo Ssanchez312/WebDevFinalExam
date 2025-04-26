@@ -1,1 +1,2 @@
 let clothingItems = []; 
+let selectedClothingIds = [];

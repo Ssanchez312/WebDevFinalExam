@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\sergi\\Desktop\\WebDevClass\\WebDevFinalExam\\api\\wwwroot\\uploads\\a699f6a6-1494-4241-8fcd-7a59c9c491f7.png",
+      "PackagePath": "staticwebassets\\uploads\\a699f6a6-1494-4241-8fcd-7a59c9c491f7.png"
+    },
+    {
       "Id": "C:\\Users\\sergi\\Desktop\\WebDevClass\\WebDevFinalExam\\api\\wwwroot\\uploads\\ae80559e-f25a-4f01-b834-77e7801ee7d4.jpg",
       "PackagePath": "staticwebassets\\uploads\\ae80559e-f25a-4f01-b834-77e7801ee7d4.jpg"
     },

@@ -1,14 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
---primary-color: #007bff;
---primary-hover-color: #0056b3;
---success-color: #28a745;
---success-hover-color: #218838;
---danger-color: #f44336;
---background-color: #f8f9fa;
---white-color: #ffffff;
---light-gray-color: #f1f1f1;
---medium-gray-color: #ccc;
---dark-gray-color: #aaa;
+--primary-color: rgb(0, 123, 255);
+--primary-hover-color: rgb(0, 86, 179);
+--success-color: rgb(40, 167, 69);
+--success-hover-color: rgb(33, 136, 56);
+--danger-color: rgb(244, 67, 54);
+--background-color: rgb(248, 249, 250);
+--white-color: rgb(255, 255, 255);
+--light-gray-color: rgb(241, 241, 241);
+--medium-gray-color: rgb(204, 204, 204);
+--dark-gray-color: rgb(170, 170, 170);
 --shadow-color: rgba(0, 0, 0, 0.05);
 --box-shadow-color: rgba(0, 0, 0, 0.1);
   }
@@ -26,116 +27,115 @@
   }
 
 body {
-    font-family: "Segoe UI", sans-serif;
-    background-color: var(--background-color);
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 900px;
-  }
-  
-  nav {
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  nav a {
-    text-decoration: none;
-    margin-right: 15px;
-    color: #007bff;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  #upload-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    gap: 10px;
-    margin-bottom: 30px;
-  }
-  
-  input {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid var(--medium-gray-color);
-  }
-  
-  button {
-    padding: 10px;
-    border: none;
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: var(--primary-hover-color);
-  }
-  
-  #closet {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 10px;
-    border: 2px dashed var(--medium-gray-color);
-    border-radius: 8px;
-    min-height: 120px;
-    background-color: var(--white-color);
-    margin-bottom: 20px;
-    align-items: center;
-  }
-  
-  #closet img.clothing-item {
-    width: 80px;
-    height: auto;
-    object-fit: contain;
-    cursor: grab;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    transition: transform 0.2s ease;
-  }
-  
-  #closet img.clothing-item:hover {
-    transform: scale(1.05);
-  }
-  
+  font-family: "Noto Sans", sans-serif;
+  background-color: var(--background-color);
+  margin: 0 auto;
+  padding: 1.25em;
+  max-width: 56.25em;
+}
 
-/* login styling */
-#auth {
-    max-width: 400px;
+nav {
+  margin-bottom: 1.25em;
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+  margin-right: 0.9375em;
+  color: #007bff;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+#upload-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 25em;
+  gap: 0.625em;
+  margin-bottom: 1.875em;
+}
+
+input {
+  padding: 0.625em;
+  border-radius: 0.375em;
+  border: 0.0625em solid var(--medium-gray-color);
+}
+
+button {
+  padding: 0.625em;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 0.375em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-hover-color);
+}
+
+#closet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  padding: 0.625em;
+  border: 0.125em dashed var(--medium-gray-color);
+  border-radius: 0.5em;
+  min-height: 7.5em;
+  background-color: var(--white-color);
+  margin-bottom: 1.25em;
+  align-items: center;
+}
+
+#closet img.clothing-item {
+  width: 5em;
+  height: auto;
+  object-fit: contain;
+  cursor: grab;
+  border-radius: 0.375em;
+  border: 0.0625em solid #ccc;
+  transition: transform 0.2s ease;
+}
+
+#closet img.clothing-item:hover {
+  transform: scale(1.05);
+}
+  
+  /* login styling */
+  #auth {
+    max-width: 25em;
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+    gap: 1.25em;
+    padding: 1.25em;
     background-color: white;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-radius: 0.5em;
+    border: 0.0625em solid #ddd;
+    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.05);
   }
-  
+
   #auth input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 0.625em;
+    border: 0.0625em solid #ccc;
+    border-radius: 0.375em;
   }
-  
+
   #auth button {
-    padding: 10px;
+    padding: 0.625em;
     background-color: var(--success-color);
     color: var(--white-color);
     border: none;
-    border-radius: 6px;
+    border-radius: 0.375em;
     cursor: pointer;
   }
-  
+
   #auth button:hover {
     background-color: var(--success-hover-color);
   }
-  
+
   #auth-msg {
     text-align: center;
     font-weight: bold;
@@ -143,187 +143,185 @@ body {
   }
 
   /* add clothing page styling */
-  #closet
-  { 
-     display: flex;
+  #closet {
+    display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    padding: 10px;
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-    min-height: 150px;
+    gap: 0.75em;
+    padding: 0.625em;
+    border: 0.125em dashed #ccc;
+    border-radius: 0.5em;
+    min-height: 9.375em;
     background-color: #fefefe;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
   }
-#outfit-canvas {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border: 1px dashed #ccc;
-  border-radius: 8px;
-  min-height: 120px;
-  background-color: #fafafa;
-}
 
-.clothing-item {
-  cursor: grab;
-  transition: transform 0.2s ease;
-}
+  #outfit-canvas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.625em;
+    padding: 0.625em;
+    border: 0.0625em dashed #ccc;
+    border-radius: 0.5em;
+    min-height: 7.5em;
+    background-color: #fafafa;
+  }
 
-.clothing-item:hover {
-  transform: scale(1.05);
-}
+  .clothing-item {
+    cursor: grab;
+    transition: transform 0.2s ease;
+  }
 
-#outfit-canvas img {
-  width: 80px;
-  height: auto;          
-  object-fit: contain;    
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-  &:hover{
-    outline: 2px solid red;
-    cursor: pointer;
+  .clothing-item:hover {
     transform: scale(1.05);
   }
-}
 
-#outfit-name {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #aaa;
-  border-radius: 6px;
-  width: 100%;
-  max-width: 300px;
-}
+  #outfit-canvas img {
+    width: 5em;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.375em;
+    box-shadow: 0 0.0625em 0.1875em rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    &:hover {
+      outline: 0.125em solid red;
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
 
-#saved-outfits p {
-  background-color: var(--light-gray-color);
-  padding: 8px 12px;
-  margin-bottom: 8px;
-  border-radius: 6px;
-}
-/* Outfit vreation page styling */
-#closet,
-#outfit-canvas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 10px;
-  border: 2px dashed var(--medium-gray-color);
-  border-radius: 8px;
-  min-height: 150px;
-  background-color: var(--white-color);
-  margin-bottom: 20px;
-}
+  #outfit-name {
+    padding: 0.625em;
+    margin-bottom: 0.625em;
+    border: 0.0625em solid #aaa;
+    border-radius: 0.375em;
+    width: 100%;
+    max-width: 18.75em;
+  }
 
-.clothing-item {
-  cursor: grab;
-  transition: transform 0.2s ease;
-}
+  #saved-outfits p {
+    background-color: var(--light-gray-color);
+    padding: 0.5em 0.75em;
+    margin-bottom: 0.5em;
+    border-radius: 0.375em;
+  }
 
-.clothing-item:hover {
-  transform: scale(1.05);
-}
+  /* Outfit creation page styling */
+  #closet,
+  #outfit-canvas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75em;
+    padding: 0.625em;
+    border: 0.125em dashed var(--medium-gray-color);
+    border-radius: 0.5em;
+    min-height: 9.375em;
+    background-color: var(--white-color);
+    margin-bottom: 1.25em;
+  }
 
-#outfit-canvas img {
-  width: 80px;
-}
+  .clothing-item {
+    cursor: grab;
+    transition: transform 0.2s ease;
+  }
 
-#outfit-name {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #aaa;
-  border-radius: 6px;
-  width: 100%;
-  max-width: 300px;
-}
+  .clothing-item:hover {
+    transform: scale(1.05);
+  }
 
-#saved-outfits p {
-  background-color: #f1f1f1;
-  padding: 8px 12px;
-  margin-bottom: 8px;
-  border-radius: 6px;
-}
+  #outfit-canvas img {
+    width: 5em;
+  }
 
-/* outfit preview styling */
+  #outfit-name {
+    padding: 0.625em;
+    margin-bottom: 0.625em;
+    border: 0.0625em solid #aaa;
+    border-radius: 0.375em;
+    width: 100%;
+    max-width: 18.75em;
+  }
 
-#saved-outfits {
-  display: flex;
-  flex-wrap: wrap;    
-  gap: 20px;              
-  justify-content: flex-start;
-}
+  #saved-outfits p {
+    background-color: #f1f1f1;
+    padding: 0.5em 0.75em;
+    margin-bottom: 0.5em;
+    border-radius: 0.375em;
+  }
 
-.outfit-box {
-  background-color: var(--light-gray-color);
-  padding: 10px 15px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  width: 150px;            
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  /* outfit preview styling */
+  #saved-outfits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25em;
+    justify-content: flex-start;
+  }
 
-.outfit-preview {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 10px 0;
-  align-items: center;
-}
+  .outfit-box {
+    background-color: var(--light-gray-color);
+    padding: 0.625em 0.9375em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.0625em 0.1875em rgba(0, 0, 0, 0.1);
+    width: 9.375em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.preview-img {
-  width: 60px;
-  height: auto;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
+  .outfit-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625em;
+    margin: 0.625em 0;
+    align-items: center;
+  }
 
-#outfit-canvas img:hover {
-  outline: 2px solid red;
-  cursor: pointer;
-}
+  .preview-img {
+    width: 3.75em;
+    height: auto;
+    border-radius: 0.375em;
+    border: 0.0625em solid #ccc;
+  }
 
-/* Reset Button */
-#resetOutfitBtn {
-  background-color: var(--danger-color);
-  color: white;
-  padding: 8px 12px;
-  margin-bottom: 1em;
-  border-radius: 5px;
-  margin-top: 10px;
-  cursor: pointer;
-}
+  #outfit-canvas img:hover {
+    outline: 0.125em solid red;
+    cursor: pointer;
+  }
 
+  /* Reset Button */
+  #resetOutfitBtn {
+    background-color: var(--danger-color);
+    color: white;
+    padding: 0.5em 0.75em;
+    margin-bottom: 0.625em;
+    border-radius: 0.3125em;
+    margin-top: 0.625em;
+    cursor: pointer;
+  }
 
+  /* NavBar Styling */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    background-color: #f9f9f9;
+    padding: 1em;
+    border-bottom: 0.125em solid #ddd;
+  }
 
-/* NavBar Styling */
-.navbar {
-  display: flex;
-  justify-content: center; 
-  gap: 2rem; 
-  background-color: #f9f9f9;
-  padding: 1rem;
-  border-bottom: 2px solid #ddd; 
-}
+  .navbar a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(0, 123, 255);
+    font-size: 1.1em;
+    transition: color 0.2s ease;
+  }
 
-.navbar a {
-  text-decoration: none;
-  font-weight: bold;
-  color: rgb(0, 123, 255); 
-  font-size: 1.1rem;
-  transition: color 0.2s ease;
-}
+  .navbar a:hover {
+    color: rgb(0, 86, 179);
+  }
 
-.navbar a:hover {
-  color: rgb(0, 86, 179); 
-}
-
-#logout-btn {
-  cursor: pointer; 
-}
+  #logout-btn {
+    cursor: pointer;
+  }

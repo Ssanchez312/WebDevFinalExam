@@ -116,7 +116,7 @@ window.uploadClothing = uploadClothing;
 window.loadCloset = loadCloset;
 
 // OUtfit generator functions
-let selectedClothingIds = [];
+
 function drag(ev) {
   ev.dataTransfer.setData("id", ev.target.dataset.id);
 }
