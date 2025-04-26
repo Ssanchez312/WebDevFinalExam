@@ -8,10 +8,10 @@
 </head>
 
 <body>
-  <nav>
-    <a href="clothing.html">My Closet</a> |
-    <a href="outfits.html">Build My Outfit</a> |
-    <a href="index.html" onclick="logout()">Logout</a>
+  <nav class="navbar">
+    <a href="/client/clothing.html">My Closet</a>
+    <a href="/client/outfits.html">Build My Outfit</a>
+    <a href="" id="logout-btn">Logout</a>
   </nav>
   <hr />
   <h1>🧢 Outfit Builder</h1>
@@ -29,7 +29,7 @@
   <input type="text" id="outfit-filter" placeholder="Filter outfits by name..." />
   <button onclick="applyOutfitFilter()">Filter</button>
   <button onclick="clearOutfitFilter()">Clear</button>
-  
+
   <h2>Saved Outfits</h2>
   <div id="saved-outfits"></div>
 

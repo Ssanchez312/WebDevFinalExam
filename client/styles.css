@@ -1,6 +1,33 @@
+:root {
+--primary-color: #007bff;
+--primary-hover-color: #0056b3;
+--success-color: #28a745;
+--success-hover-color: #218838;
+--danger-color: #f44336;
+--background-color: #f8f9fa;
+--white-color: #ffffff;
+--light-gray-color: #f1f1f1;
+--medium-gray-color: #ccc;
+--dark-gray-color: #aaa;
+--shadow-color: rgba(0, 0, 0, 0.05);
+--box-shadow-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+
 body {
     font-family: "Segoe UI", sans-serif;
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
     margin: 0 auto;
     padding: 20px;
     max-width: 900px;
@@ -32,20 +59,20 @@ body {
   input {
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--medium-gray-color);
   }
   
   button {
     padding: 10px;
     border: none;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     border-radius: 6px;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-hover-color);
   }
   
   #closet {
@@ -53,10 +80,10 @@ body {
     flex-wrap: wrap;
     gap: 12px;
     padding: 10px;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--medium-gray-color);
     border-radius: 8px;
     min-height: 120px;
-    background-color: #fefefe;
+    background-color: var(--white-color);
     margin-bottom: 20px;
     align-items: center;
   }
@@ -98,15 +125,15 @@ body {
   
   #auth button {
     padding: 10px;
-    background-color: #28a745;
-    color: white;
+    background-color: var(--success-color);
+    color: var(--white-color);
     border: none;
     border-radius: 6px;
     cursor: pointer;
   }
   
   #auth button:hover {
-    background-color: #218838;
+    background-color: var(--success-hover-color);
   }
   
   #auth-msg {
@@ -173,7 +200,7 @@ body {
 }
 
 #saved-outfits p {
-  background-color: #f1f1f1;
+  background-color: var(--light-gray-color);
   padding: 8px 12px;
   margin-bottom: 8px;
   border-radius: 6px;
@@ -185,10 +212,10 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   padding: 10px;
-  border: 2px dashed #ccc;
+  border: 2px dashed var(--medium-gray-color);
   border-radius: 8px;
   min-height: 150px;
-  background-color: #fefefe;
+  background-color: var(--white-color);
   margin-bottom: 20px;
 }
 
@@ -231,7 +258,7 @@ body {
 }
 
 .outfit-box {
-  background-color: #f4f4f4;
+  background-color: var(--light-gray-color);
   padding: 10px 15px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -264,11 +291,39 @@ body {
 
 /* Reset Button */
 #resetOutfitBtn {
-  background-color: #f44336;
+  background-color: var(--danger-color);
   color: white;
   padding: 8px 12px;
+  margin-bottom: 1em;
   border-radius: 5px;
   margin-top: 10px;
   cursor: pointer;
 }
 
+
+
+/* NavBar Styling */
+.navbar {
+  display: flex;
+  justify-content: center; 
+  gap: 2rem; 
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-bottom: 2px solid #ddd; 
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(0, 123, 255); 
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: rgb(0, 86, 179); 
+}
+
+#logout-btn {
+  cursor: pointer; 
+}

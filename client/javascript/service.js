@@ -272,7 +272,7 @@ function editOutfit(id) {
         if (!sourceImg) return;
 
         const img = document.createElement("img");
-        img.src = `${apiURL}${item.imageUrl}`;
+        img.src = sourceImg.src;
         img.style.width = "80px";
         canvas.appendChild(img);
         selectedClothingIds.push(id);
@@ -307,3 +307,9 @@ function clearOutfitFilter() {
   currentOutfitFilter = "";
   loadOutfits();
 }
+
+
+document.getElementById("logout-btn").addEventListener("click", () => {
+  localStorage.removeItem("user");
+  window.location.href = "/index.html";
+});
