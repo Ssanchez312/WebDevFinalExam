@@ -13,5 +13,6 @@ var app = builder.Build();
 app.UseCors("AllowFrontend"); 
 app.UseAuthorization();
 app.MapControllers();
+app.UseStaticFiles();
 app.MapGet("/", () => "Hello World!");
 app.Run();

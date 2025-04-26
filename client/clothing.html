@@ -12,20 +12,25 @@
 
 <body>
   <nav>
-    <a href="clothing.html">Upload Clothing</a> |
-    <a href="outfits.html">My Closet</a> |
-    <a href="index.html" onclick="logout()">Logout</a>
+    <nav>
+      <a href="clothing.html">My Closet</a> |
+      <a href="outfits.html">Build My Outfit</a> |
+      <a href="index.html" onclick="logout()">Logout</a>
+    </nav>
   </nav>
   <hr />
   <h1>Virtual Closet</h1>
   <h2>Upload Clothing Item</h2>
 
   <div>
-    <input type="text" id="clothing-name" placeholder="Clothing name" />
-    <input type="text" id="clothing-type" placeholder="Type (e.g. Shirt, Pants)" />
-    <input type="text" id="clothing-description" placeholder="Description (optional)" />
-    <input type="text" id="clothing-image" placeholder="Image URL" />
-    <button onclick="uploadClothing()">Upload</button>
+    <form id="uploadForm">
+      <input type="text" name="name" placeholder="Name" />
+      <input type="text" name="type" placeholder="Type" />
+      <input type="text" name="description" placeholder="Description" />
+      <input type="file" name="image" accept="image/*" />
+      <button type="submit">Upload</button>
+    </form>
+    
   </div>
 
   <h2>Your Closet</h2>

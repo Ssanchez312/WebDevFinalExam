@@ -18,5 +18,25 @@
       2,
       6
     ]
+  },
+  {
+    "Id": 6,
+    "Name": "lol",
+    "UserId": 1,
+    "ClothingItemIds": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "Id": 7,
+    "Name": "testing",
+    "UserId": 1,
+    "ClothingItemIds": [
+      8,
+      7,
+      3
+    ]
   }
 ]

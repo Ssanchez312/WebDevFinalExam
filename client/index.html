@@ -9,11 +9,7 @@
   <script src="./javascript/ui.js"></script>
 </head>
 <body>
-  <nav>
-    <a href="clothing.html">Upload Clothing</a> |
-    <a href="outfits.html">My Closet</a> |
-    <a href="index.html" onclick="logout()">Logout</a>
-  </nav>
+
   <hr />
   <h1>Virtual Closet</h1>
 
@@ -21,13 +17,13 @@
     <h2>Register</h2>
     <input type="text" id="reg-username" placeholder="Username">
     <input type="password" id="reg-password" placeholder="Password">
-    <button onclick="registerUser()">Register</button>
-
+    <button id="register-btn" type="button">Register</button>
+  
     <h2>Login</h2>
     <input type="text" id="login-username" placeholder="Username">
     <input type="password" id="login-password" placeholder="Password">
-    <button onclick="loginUser()">Login</button>
-
+    <button id="login-btn" type="button">Login</button>
+  
     <p id="auth-msg"></p>
   </div>
 

@@ -12,13 +12,36 @@ public class ClothingController : ControllerBase
 
 
     [HttpPost("upload")]
-    public IActionResult UploadClothing([FromBody] ClothingItem newItem)
+[RequestSizeLimit(5_000_000)] // Limit to 5MB
+public async Task<IActionResult> UploadClothing([FromForm] IFormFile image, [FromForm] string name, [FromForm] string type, [FromForm] string description, [FromForm] int userId)
+{
+    if (image == null || image.Length == 0)
+        return BadRequest("No image uploaded");
+
+    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(image.FileName)}";
+    var filePath = Path.Combine("wwwroot/uploads", fileName);
+
+    using (var stream = new FileStream(filePath, FileMode.Create))
     {
-        newItem.Id = _nextId++;
-        _clothingItems.Add(newItem);
-        StorageService.SaveToFile(FilePath, _clothingItems);
-        return Ok(new { message = "Clothing item uploaded!", item = newItem });
+        await image.CopyToAsync(stream);
     }
+
+    var newItem = new ClothingItem
+    {
+        Id = _nextId++,
+        Name = name,
+        Type = type,
+        Description = description,
+        ImageUrl = $"/uploads/{fileName}",
+        UserId = userId
+    };
+
+    _clothingItems.Add(newItem);
+    await StorageService.SaveToFile(FilePath, _clothingItems);
+
+    return Ok(new { message = "Clothing uploaded", item = newItem });
+}
+
 
     [HttpGet("user/{userId}")]
     public IActionResult GetUserClothing(int userId)

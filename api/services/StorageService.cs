@@ -3,11 +3,12 @@ using System.Text.Json;
 
 public static class StorageService
 {
-    public static void SaveToFile<T>(string path, List<T> data)
+    public static async Task SaveToFile<T>(string path, List<T> data)
     {
         var json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
-        File.WriteAllText(path, json);
+        await File.WriteAllTextAsync(path, json);
     }
+
 
     public static List<T> LoadFromFile<T>(string path)
     {

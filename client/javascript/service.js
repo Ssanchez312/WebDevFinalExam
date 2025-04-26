@@ -1,21 +1,32 @@
 const apiURL = "http://localhost:5261/api";
 let currentOutfitFilter = "";
 
-
 // User registration and login functions
+window.addEventListener("DOMContentLoaded", () => {
+  const registerBtn = document.getElementById("register-btn");
+  const loginBtn = document.getElementById("login-btn");
+
+  if (registerBtn) {
+    registerBtn.addEventListener("click", registerUser);
+  }
+
+  if (loginBtn) {
+    loginBtn.addEventListener("click", loginUser);
+  }
+});
 async function registerUser() {
-  console.log("registerUser function called");
-  const userName = document.getElementById("reg-username").value;
+  const username = document.getElementById("reg-username").value;
   const password = document.getElementById("reg-password").value;
 
   const res = await fetch(`${apiURL}/users/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ username: userName, password }),
+    body: JSON.stringify({ username, password }),
   });
 
   const data = await res.json();
-  document.getElementById("auth-msg").textContent = data.message || data;
+  document.getElementById("auth-msg").textContent = data.message;
+  if (res.ok) localStorage.setItem("user", JSON.stringify(data.user));
 }
 
 async function loginUser() {
@@ -28,14 +39,11 @@ async function loginUser() {
     body: JSON.stringify({ username, password }),
   });
 
+  const data = await res.json();
+  document.getElementById("auth-msg").textContent = data.message;
   if (res.ok) {
-    const data = await res.json();
     localStorage.setItem("user", JSON.stringify(data.user));
-    document.getElementById("auth-msg").textContent = "Login successful!";
-    window.location.href = "clothing.html";
-  } else {
-    const text = await res.text(); // fallback if not JSON
-    document.getElementById("auth-msg").textContent = text || "Login failed.";
+    // Redirect or reload, if needed
   }
 }
 
@@ -128,7 +136,7 @@ function drop(ev) {
     img.src = document.querySelector(`[data-id='${id}']`).src;
 
     img.dataset.id = id;
-    img.addEventListener("click", removeFromCanvas); 
+    img.addEventListener("click", removeFromCanvas);
     ev.target.appendChild(img);
   }
 }
@@ -137,7 +145,9 @@ function removeFromCanvas(ev) {
   const img = ev.target;
   const id = parseInt(img.dataset.id);
 
-  selectedClothingIds = selectedClothingIds.filter(clothingId => clothingId !== id);
+  selectedClothingIds = selectedClothingIds.filter(
+    (clothingId) => clothingId !== id
+  );
 
   img.remove();
 }
@@ -184,15 +194,16 @@ async function loadOutfits() {
   const outfits = await res.json();
 
   const container = document.getElementById("saved-outfits");
+  if (!container) return;
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
 
-  const filtered = outfits.filter(o =>
+  const filtered = outfits.filter((o) =>
     o.name.toLowerCase().includes(currentOutfitFilter)
   );
 
-  filtered.forEach(outfit => {
+  filtered.forEach((outfit) => {
     const outfitBox = document.createElement("div");
     outfitBox.classList.add("outfit-box");
 
@@ -203,12 +214,12 @@ async function loadOutfits() {
     const preview = document.createElement("div");
     preview.classList.add("outfit-preview");
 
-    outfit.clothingItemIds.forEach(id => {
+    outfit.clothingItemIds.forEach((id) => {
       const img = document.querySelector(`[data-id="${id}"]`);
       if (!img) return;
 
       const imgCopy = document.createElement("img");
-      imgCopy.src = img.src;
+      imgCopy.src = `${apiURL}${item.imageUrl}`;
       imgCopy.alt = "Clothing item";
       imgCopy.classList.add("preview-img");
       preview.appendChild(imgCopy);
@@ -261,7 +272,7 @@ function editOutfit(id) {
         if (!sourceImg) return;
 
         const img = document.createElement("img");
-        img.src = sourceImg.src;
+        img.src = `${apiURL}${item.imageUrl}`;
         img.style.width = "80px";
         canvas.appendChild(img);
         selectedClothingIds.push(id);
@@ -295,4 +306,4 @@ function clearOutfitFilter() {
   document.getElementById("outfit-filter").value = "";
   currentOutfitFilter = "";
   loadOutfits();
-} 
+}

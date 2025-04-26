@@ -340,3 +340,4 @@ C:\Users\sergi\Desktop\WebDevClass\WebDevFinalExam\api\obj\Debug\net9.0\refint\a
 C:\Users\sergi\Desktop\WebDevClass\WebDevFinalExam\api\obj\Debug\net9.0\api.pdb
 C:\Users\sergi\Desktop\WebDevClass\WebDevFinalExam\api\obj\Debug\net9.0\api.genruntimeconfig.cache
 C:\Users\sergi\Desktop\WebDevClass\WebDevFinalExam\api\obj\Debug\net9.0\ref\api.dll
+C:\Users\sergi\Desktop\WebDevClass\WebDevFinalExam\api\bin\Debug\net9.0\api.staticwebassets.runtime.json
