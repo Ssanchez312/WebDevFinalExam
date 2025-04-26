@@ -194,7 +194,7 @@ async function loadOutfits() {
   const outfits = await res.json();
 
   const container = document.getElementById("saved-outfits");
-  if (!container) return;
+
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
@@ -219,7 +219,7 @@ async function loadOutfits() {
       if (!img) return;
 
       const imgCopy = document.createElement("img");
-      imgCopy.src = `${apiURL}${item.imageUrl}`;
+      imgCopy.src = img.src;  
       imgCopy.alt = "Clothing item";
       imgCopy.classList.add("preview-img");
       preview.appendChild(imgCopy);

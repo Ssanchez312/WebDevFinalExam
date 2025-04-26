@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       if (res.ok) {
         localStorage.setItem("user", JSON.stringify(data.user));
-        window.location.href = "clothing.html"; // 👈 where to go after login
+        window.location.href = "clothing.html"; 
       } else {
         document.getElementById("auth-msg").textContent = data.message;
       }

@@ -12,7 +12,7 @@ public class ClothingController : ControllerBase
 
 
     [HttpPost("upload")]
-[RequestSizeLimit(5_000_000)] // Limit to 5MB
+[RequestSizeLimit(5_000_000)]
 public async Task<IActionResult> UploadClothing([FromForm] IFormFile image, [FromForm] string name, [FromForm] string type, [FromForm] string description, [FromForm] int userId)
 {
     if (image == null || image.Length == 0)
